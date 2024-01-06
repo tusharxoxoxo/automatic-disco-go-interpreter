@@ -1,6 +1,8 @@
 # automatic-disco-go-interpreter
-another interpreter in go
+another tree walking interpreter in go
 
+Interpreter take source code and evaluate it without producing some visible, intermediate result that can later be executed while a compilers, which take source code and produce output in another language that the underlying system can understand.
+ 
 In this, i have built my own lexer, my own parser, my own tree representation, and my very own evaluator. The interpreter i have built is the famous tree-walking interpreter
 
 we are going to have our very own programming language for our interpreter
