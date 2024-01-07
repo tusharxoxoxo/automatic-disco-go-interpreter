@@ -11,4 +11,44 @@ type Token struct{
     Literal string
 }
 
+//let five = 5;
+//let ten = 10;
+//
+//let add = fn(x, y) {
+//    x + y;
+//};  
+//
+//let result = add(five, ten);
+
+
+const (
+    //Special Types
+    ILLEGAL = "ILLEGAL"
+    EOF = "EOF"
+    
+    //Identifiers + Literals
+    IDENT = "IDENT" //add, foobar, x, y
+    INT = "INT" //123456
+
+    //Operators
+    ASSIGN = "="
+    PLUS = "+"
+
+    //Delimiters    
+    COMMA = ","
+    SEMICOLON = ";"
+
+    LPAREN = "("
+    RPAREN = ")"
+    LBRACE = "{"
+    RBRACE = "}"
+
+    //Keywords
+    FUNCTION = "FUNCTION"
+    LET = "LET"
+
+
+)
+
+
 

@@ -59,7 +59,7 @@ twice(addTwo, 2); // => 12
 
 Functions in GoblinShark are just values, like integers or strings. That feature is called “first class functions”.
 The following are the features our interpreter for the GoblinShark language is going to have: 
-• the lexer
+• the lexer -> takes source code as input and output the tokens that represent source code
 • the parser
 • the Abstract Syntax Tree (AST) • the internal object system
 • the evaluator
