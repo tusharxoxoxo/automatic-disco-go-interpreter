@@ -1,54 +1,70 @@
-//token/token.go 
-
-//in our token package we are going to define our token struct and token type
-
 package token
 
 type TokenType string
 
-type Token struct{
-    Type TokenType
-    Literal string
-}
-
-//let five = 5;
-//let ten = 10;
-//
-//let add = fn(x, y) {
-//    x + y;
-//};  
-//
-//let result = add(five, ten);
-
-
 const (
-    //Special Types
-    ILLEGAL = "ILLEGAL"
-    EOF = "EOF"
-    
-    //Identifiers + Literals
-    IDENT = "IDENT" //add, foobar, x, y
-    INT = "INT" //123456
+	ILLEGAL = "ILLEGAL"
+	EOF     = "EOF"
 
-    //Operators
-    ASSIGN = "="
-    PLUS = "+"
+	// Identifiers + literals
+	IDENT  = "IDENT"  // add, foobar, x, y, ...
+	INT    = "INT"    // 1343456
+	STRING = "STRING" // "foobar"
 
-    //Delimiters    
-    COMMA = ","
-    SEMICOLON = ";"
+	// Operators
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
 
-    LPAREN = "("
-    RPAREN = ")"
-    LBRACE = "{"
-    RBRACE = "}"
+	LT = "<"
+	GT = ">"
 
-    //Keywords
-    FUNCTION = "FUNCTION"
-    LET = "LET"
+	EQ     = "=="
+	NOT_EQ = "!="
 
+	// Delimiters
+	COMMA     = ","
+	SEMICOLON = ";"
+	COLON     = ":"
 
+	LPAREN   = "("
+	RPAREN   = ")"
+	LBRACE   = "{"
+	RBRACE   = "}"
+	LBRACKET = "["
+	RBRACKET = "]"
+
+	// Keywords
+	FUNCTION = "FUNCTION"
+	LET      = "LET"
+	TRUE     = "TRUE"
+	FALSE    = "FALSE"
+	IF       = "IF"
+	ELSE     = "ELSE"
+	RETURN   = "RETURN"
 )
 
+type Token struct {
+	Type    TokenType
+	Literal string
+}
 
+var keywords = map[string]TokenType{
+	"fn":     FUNCTION,
+	"let":    LET,
+	"true":   TRUE,
+	"false":  FALSE,
+	"if":     IF,
+	"else":   ELSE,
+	"return": RETURN,
+}
 
+func LookupIdent(ident string) TokenType {
+	if tok, ok := keywords[ident]; ok {
+		return tok
+	}
+	return IDENT
+}

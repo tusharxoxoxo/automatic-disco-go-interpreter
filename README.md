@@ -61,6 +61,10 @@ Functions in GoblinShark are just values, like integers or strings. That feature
 The following are the features our interpreter for the GoblinShark language is going to have: 
 • the lexer -> takes source code as input and output the tokens that represent source code
 • the parser
-• the Abstract Syntax Tree (AST) • the internal object system
+• the Abstract Syntax Tree (AST) 
+• the internal object system
 • the evaluator
+
+The actual interpreter will attach filenames and line number to tokens, for tracking down lexing and parsing errors but we just creating a simple interpreter just to learn stuff so we are excluding this part to reduce complexity of our interpreter.
+So we are just using strings and ignoring filenames and line numbers.
 
